@@ -7,22 +7,23 @@ import static org.junit.jupiter.api.Assertions.*;
 class SQRServiceTest {
 
     @Test
-    void shouldNumberOfSquares() {
+    void shouldCalculateNumberOfSquares() {
         SQRService service = new SQRService();
 
         int expected = 3;
         int minRange = 200; //минимальный диапазон
         int maxRange = 300; //максимальный диапазон
 
-       //вызываем целевой метод
-        int actual = service.numberOfSquares(minRange, maxRange);
+        //вызываем целевой метод
+        int actual = service.calculate(minRange, maxRange);
 
         assertEquals(expected, actual);
 
 
     }
+
     @Test
-    void shouldNumberOfSquaresLarger() {
+    void shouldCalculateNumberOfSquaresLarger() {
         SQRService service = new SQRService();
 
         int expected = 6;
@@ -30,14 +31,15 @@ class SQRServiceTest {
         int maxRange = 900; //максимальный диапазон
 
         //вызываем целевой метод
-        int actual = service.numberOfSquares(minRange, maxRange);
+        int actual = service.calculate(minRange, maxRange);
 
         assertEquals(expected, actual);
 
 
     }
+
     @Test
-    void shouldNumberOfSquaresLess() {
+    void shouldCalculateNumberOfSquaresLess() {
         SQRService service = new SQRService();
 
         int expected = 22;
@@ -45,7 +47,22 @@ class SQRServiceTest {
         int maxRange = 1000; //максимальный диапазон
 
         //вызываем целевой метод
-        int actual = service.numberOfSquares(minRange, maxRange);
+        int actual = service.calculate(minRange, maxRange);
+
+        assertEquals(expected, actual);
+
+
+    }
+    @Test
+    void shouldCalculateNumberOfSquaresNegative() {
+        SQRService service = new SQRService();
+
+        int expected = 0;
+        int minRange = -1000; //минимальный диапазон
+        int maxRange = 0; //максимальный диапазон
+
+        //вызываем целевой метод
+        int actual = service.calculate(minRange, maxRange);
 
         assertEquals(expected, actual);
 
